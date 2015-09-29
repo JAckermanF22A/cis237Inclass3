@@ -26,11 +26,11 @@ namespace cis237Inclass3
             set { lastName = value; }
         }
 
-        public string FirstName
+        /*public string FirstName
         {
             get { return department; }
             set { department = value; }
-        }
+        }*/
 
         //3 Parameter Constructor
         public Employee(string FirstName, string LastName, string Department)
@@ -40,6 +40,14 @@ namespace cis237Inclass3
             this.department = Department;
         }
 
+        public override string ToString()
+        {
+            return this.FirstName + " " + this.LastName;
+        }
 
+        protected virtual void PrintFullName()
+        {
+            Console.WriteLine(this.FirstName + " " + this.LastName);
+        }
     }
 }
