@@ -38,9 +38,14 @@ namespace cis237Inclass3
         //Note: Did not override teh PrintFUllName protected virtual method even though it is protected and virtual, we aren't going to override it.
         //Calling it will just call teh parent version
 
-        public decimal CalcWeeklyGross(double HoursWorked)
+        public override decimal CalculateWeeklyGross()
         {
-            return hourlyRate * (decimal)HoursWorked;
+            return hourlyRate * (decimal)hoursWorked;
+        }
+
+        public override string GetDepartmentTwice()
+        {
+            return base.GetDepartmentTwice() + base.GetDepartmentTwice();
         }
     }
 }

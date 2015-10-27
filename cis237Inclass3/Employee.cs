@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace cis237Inclass3
 {
-    class Employee
+    abstract class Employee : IEmployee
     {
         //Private variables
         private string firstName;
@@ -48,6 +48,29 @@ namespace cis237Inclass3
         protected virtual void PrintFullName()
         {
             Console.WriteLine(this.FirstName + " " + this.LastName);
+        }
+
+        public abstract decimal CalculateWeeklyGross();
+
+
+        //public abstract string GetDepartmentTwice();
+
+        public virtual string GetDepartmentTwice()
+        {
+            return this.department + this.department;
+
+        }
+
+        public int CompareTo(object obj)
+        {
+            Employee otherEmployee = (Employee)obj;
+            //return this.CalculateWeeklyGross().CompareTo(otherEmployee.CalculateWeeklyGross());
+
+            decimal thisWeeklyGross = this.CalculateWeeklyGross();
+
+            decimal otherGuysWeeklyGross = otherEmployee.CalculateWeeklyGross();
+
+            return thisWeeklyGross.CompareTo(otherGuysWeeklyGross);
         }
     }
 }

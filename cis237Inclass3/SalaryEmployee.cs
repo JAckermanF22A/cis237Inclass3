@@ -37,7 +37,7 @@ namespace cis237Inclass3
             Console.WriteLine(base.ToString() + " " + this.yearlySalary.ToString());
         }
 
-        public decimal CalculateWeeklyGross()
+        public override decimal CalculateWeeklyGross()
         {
             return this.yearlySalary / 52;
         }
